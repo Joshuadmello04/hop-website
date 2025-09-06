@@ -23,7 +23,6 @@ import {
   GraduationCap,
   Handshake,
   Gift,
-  Mail,
   Navigation
 } from "lucide-react";
 
@@ -167,10 +166,10 @@ function Navbar({ className }: { className?: string }) {
                   Community Outreach
                 </HoveredLink>
                 <HoveredLink href="/womens-ministry" icon={<Heart size={16} />}>
-                  Women's Ministry
+                  Women&#39;s Ministry
                 </HoveredLink>
                 <HoveredLink href="/mens-ministry" icon={<Users size={16} />}>
-                  Men's Ministry
+                  Men&#39;s Ministry
                 </HoveredLink>
               </MenuSection>
             </div>

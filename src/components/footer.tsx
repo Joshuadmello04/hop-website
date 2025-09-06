@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              House of Prayer Mumbai is a vibrant community of believers dedicated to worship, fellowship, and serving our city with God's love. Join us as we grow together in faith.
+              House of Prayer Mumbai is a vibrant community of believers dedicated to worship, fellowship, and serving our city with God&#39;s love. Join us as we grow together in faith.
             </p>
             
             {/* Contact Info */}
