@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Calendar, Clock, MapPin } from 'lucide-react
 
 const UltraModernCalendar = () => {
   const [date, setDate] = useState(new Date());
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState<ChurchEvent | null>(null);
 
   const churchEvents = [
     {
@@ -90,30 +90,52 @@ const UltraModernCalendar = () => {
     calendarDays.push(day);
   }
 
-  const getEventsForDate = (day) => {
+interface GetEventsForDate {
+    (day: number | null): ChurchEvent[];
+}
+
+const getEventsForDate: GetEventsForDate = (day) => {
     if (!day) return [];
-    return churchEvents.filter(event => {
-      const eventDate = event.date;
-      return eventDate.getFullYear() === currentYear &&
-             eventDate.getMonth() === currentMonth &&
-             eventDate.getDate() === day;
+    return churchEvents.filter((event: ChurchEvent) => {
+        const eventDate = event.date;
+        return eventDate.getFullYear() === currentYear &&
+                     eventDate.getMonth() === currentMonth &&
+                     eventDate.getDate() === day;
     });
-  };
+};
 
-  const isToday = (day) => {
-    return day &&
-           today.getFullYear() === currentYear &&
-           today.getMonth() === currentMonth &&
-           today.getDate() === day;
-  };
+interface IsTodayFn {
+    (day: number | null): boolean;
+}
 
-  const navigateMonth = (direction) => {
-    setDate(prev => {
-      const newDate = new Date(prev);
-      newDate.setMonth(prev.getMonth() + direction);
-      return newDate;
+const isToday: IsTodayFn = (day) => {
+    return !!day &&
+                 today.getFullYear() === currentYear &&
+                 today.getMonth() === currentMonth &&
+                 today.getDate() === day;
+};
+
+interface ChurchEvent {
+    id: number;
+    date: Date;
+    title: string;
+    time: string;
+    location: string;
+    type: string;
+}
+
+interface SpecialEvent {
+    title: string;
+    active: boolean;
+}
+
+const navigateMonth = (direction: number) => {
+    setDate((prev: Date) => {
+        const newDate = new Date(prev);
+        newDate.setMonth(prev.getMonth() + direction);
+        return newDate;
     });
-  };
+};
 
   return (
     <div className="min-h-screen p-6">
