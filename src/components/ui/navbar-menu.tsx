@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ChevronDown, Calendar, Users, MapPin, Heart, Phone, User } from "lucide-react";
 
 const transition = {
-  type: "spring",
+  type: "spring" as const,
   mass: 0.4,
   damping: 20,
   stiffness: 300,
@@ -13,7 +13,7 @@ const transition = {
 };
 
 const menuItemTransition = {
-  type: "spring",
+  type: "spring" as const,
   mass: 0.3,
   damping: 25,
   stiffness: 400,
