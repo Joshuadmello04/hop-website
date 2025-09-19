@@ -43,8 +43,9 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12 bg-black/[0.96] bg-grid-white/[0.02] relative overflow-hidden">
-      <h2 className="text-amber-100 text-center text-5xl mb-5">WHAT PEOPLE SAY</h2>
+    <div className="bg-black/[0.96] bg-grid-white/[0.02] relative overflow-hidden">
+     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+      <h2 className="text-2xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-5">WHAT PEOPLE SAY</h2>
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
@@ -161,6 +162,7 @@ export const AnimatedTestimonials = ({
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
