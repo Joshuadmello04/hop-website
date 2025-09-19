@@ -1,3 +1,4 @@
+import DraggableCardDemo from "@/components/dragcard";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/herosection";
 import { ChurchNavbar } from "@/components/navbar";
@@ -17,7 +18,7 @@ export default function Home() {
       {/* Page Content */}
       <ChurchNavbar />
       <HeroSection/>
-      <Spotlight />
+      <DraggableCardDemo />
       <Testimonials/>
       <SignupFormDemo/>
       <Footer/>
