@@ -13,10 +13,6 @@ export function Spotlight() {
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
           House of Prayer is a Full Gospel Evangelical Church in Mumbai, dedicated to empowering families and youth through the uncompromised Word of God, Spirit-led worship, and a strong foundation in prayer. We are a Christ-centered community passionate about revival, discipleship, and the transforming power of the Holy Spirit
         </p>
-        <p>
-          No filters. No perfect people. Just a whole lot of grace and truth.
-So pull up a chair, there’s space for you!
-        </p>
       </div>
     </div>
   );

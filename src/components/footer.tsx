@@ -1,6 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Mail, Clock, Instagram, Youtube, ExternalLink } from "lucide-react";
-import { LinkPreview } from "./ui/link-preview";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export default function Footer() {
   return (
@@ -8,12 +8,13 @@ export default function Footer() {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-900/10 via-black to-black"></div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 max-w-none">
           
-          {/* Church Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-6">
+          {/* Church Info - Takes 2 columns on large screens */}
+          <div className="lg:col-span-2">
+            {/* Logo and Church Name */}
+            <div className="flex items-center space-x-4 mb-6">
               <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
                 <div className="w-8 h-8 bg-white rounded-sm transform rotate-45"></div>
               </div>
@@ -23,47 +24,55 @@ export default function Footer() {
               </div>
             </div>
             
+            {/* Description */}
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              House of Prayer Mumbai is a vibrant community of believers dedicated to worship, fellowship, and serving our city with God&#39;s love. Join us as we grow together in faith.
+              House of Prayer Mumbai is a vibrant community of believers dedicated to worship, fellowship, and serving our city with Gods love.
             </p>
             
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3 text-sm">
-                <MapPin className="text-red-400 mt-0.5 flex-shrink-0" size={16} />
-                <div>
-                  <p className="text-gray-300">
-                    Rotary Club, Juhu Tara Road<br/>
-                    Santacruz (West), Mumbai<br/>
-                    Maharashtra, India
-                  </p>
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Rotary%20Club%20Of%20Bombay%20West%20Gr.%20Floor%2C%20Rotary%20Club%2C%20Juhu%20Tara%20Rd%2C%20Mangelwadi%2C%20Shivaji%20Nagr%2C%20Santacruz%20(West)%2C%20Mumbai%2C%20Maharashtra%20400054%2C%20India"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-red-400 hover:text-red-300 text-xs flex items-center space-x-1 mt-1 transition-colors"
-                  >
-                    <span>View on Google Maps</span>
-                    <ExternalLink size={12} />
-                  </a>
+            {/* Contact Info in Horizontal Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+              {/* Address */}
+              <div>
+                <div className="flex items-center space-x-2 mb-2">
+                  <MapPin className="text-red-400" size={16} />
+                  <h4 className="text-white font-medium text-sm">Visit Us</h4>
                 </div>
+                <p className="text-gray-300 text-xs leading-relaxed">
+                  Rotary Club, Juhu Tara Road<br/>
+                  Santacruz (West), Mumbai
+                </p>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Rotary%20Club%20Of%20Bombay%20West%20Gr.%20Floor%2C%20Rotary%20Club%2C%20Juhu%20Tara%20Rd%2C%20Mangelwadi%2C%20Shivaji%20Nagr%2C%20Santacruz%20(West)%2C%20Mumbai%2C%20Maharashtra%20400054%2C%20India"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red-400 hover:text-red-300 text-xs flex items-center space-x-1 mt-1 transition-colors"
+                >
+                  <span>View Map</span>
+                  <ExternalLink size={12} />
+                </a>
               </div>
               
-              <div className="flex items-center space-x-3 text-sm">
-                <Phone className="text-red-400 flex-shrink-0" size={16} />
-                <div>
-                  <a href="tel:+919819064045" className="text-gray-300 hover:text-white transition-colors">
-                    +91 98190 64045
-                  </a>
-                  <p className="text-gray-500 text-xs">Thomas Jayaraj (Pastor)</p>
+              {/* Phone */}
+              <div>
+                <div className="flex items-center space-x-2 mb-2">
+                  <Phone className="text-red-400" size={16} />
+                  <h4 className="text-white font-medium text-sm">Call Us</h4>
                 </div>
+                <a href="tel:+919819064045" className="text-gray-300 hover:text-white transition-colors text-xs block">
+                  +91 98190 64045
+                </a>
+                <p className="text-gray-500 text-xs">Thomas Jayaraj (Pastor)</p>
               </div>
               
-              <div className="flex items-center space-x-3 text-sm">
-                <Mail className="text-red-400 flex-shrink-0" size={16} />
+              {/* Email */}
+              <div>
+                <div className="flex items-center space-x-2 mb-2">
+                  <Mail className="text-red-400" size={16} />
+                  <h4 className="text-white font-medium text-sm">Email Us</h4>
+                </div>
                 <a 
                   href="mailto:thomas.hopnet@gmail.com" 
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors text-xs"
                 >
                   thomas.hopnet@gmail.com
                 </a>
@@ -88,7 +97,7 @@ export default function Footer() {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="text-gray-400 hover:text-red-400 text-sm transition-colors duration-200 hover:translate-x-1 inline-block transform"
+                    className="text-gray-400 hover:text-red-400 text-sm transition-all duration-200 hover:translate-x-1 inline-block transform"
                   >
                     {link.label}
                   </a>
@@ -105,21 +114,21 @@ export default function Footer() {
             <div className="space-y-4">
               
               {/* Hindi Service */}
-              <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
+              <div className="bg-gray-900/50 rounded-lg p-3 border border-gray-800">
                 <div className="flex items-center space-x-2 mb-2">
                   <Clock className="text-red-400" size={16} />
-                  <h4 className="font-medium text-white">Hindi Service</h4>
+                  <h4 className="font-medium text-white text-sm">Hindi Service</h4>
                 </div>
-                <p className="text-gray-300 text-sm">Sunday: 8:00 AM - 11:00 AM</p>
+                <p className="text-gray-300 text-xs">Sunday: 8:00 AM - 11:00 AM</p>
               </div>
               
               {/* English Service */}
-              <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-800">
+              <div className="bg-gray-900/50 rounded-lg p-3 border border-gray-800">
                 <div className="flex items-center space-x-2 mb-2">
                   <Clock className="text-red-400" size={16} />
-                  <h4 className="font-medium text-white">English Service</h4>
+                  <h4 className="font-medium text-white text-sm">English Service</h4>
                 </div>
-                <p className="text-gray-300 text-sm">Sunday: 11:00 AM - 1:00 PM</p>
+                <p className="text-gray-300 text-xs">Sunday: 11:00 AM - 1:00 PM</p>
               </div>
             </div>
           </div>
@@ -129,29 +138,29 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4 border-b border-red-600/30 pb-2">
               Follow Us
             </h3>
-            <div className="flex space-x-4 mb-6">
+            <div className="flex space-x-3 mb-6">
               <LinkPreview
                 url="https://www.instagram.com/hop.mumbai/"
-                className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
               >
-                <Instagram className="text-white" size={20} />
+                <Instagram className="text-white" size={18} />
               </LinkPreview>
               
               <LinkPreview
                 url="https://www.youtube.com/@hop.mumbai"
-                className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
+                className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
               >
-                <Youtube className="text-white" size={20} />
+                <Youtube className="text-white" size={18} />
               </LinkPreview>
             </div>
             
             {/* Connect with us section */}
-            <div className="bg-gray-900/30 rounded-lg p-4 border border-gray-800">
-              <h4 className="text-white font-medium mb-3 flex items-center space-x-2">
+            <div className="bg-gray-900/30 rounded-lg p-3 border border-gray-800">
+              <h4 className="text-white font-medium mb-3 flex items-center space-x-2 text-sm">
                 <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                <span>Connect with our Community</span>
+                <span>Connect with us</span>
               </h4>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+              <p className="text-gray-400 text-xs leading-relaxed mb-3 text-justify">
                 Join our vibrant online community! Follow our 
                 <LinkPreview 
                   url="https://www.instagram.com/hop.mumbai/" 
@@ -168,8 +177,8 @@ export default function Footer() {
                 </LinkPreview>
                 for powerful sermons and worship sessions.
               </p>
-              <div className="text-xs text-gray-500">
-                Never miss live streams, events, and fellowship opportunities
+              <div className="text-xs text-gray-500 text-justify">
+                Never miss live streams, events, and fellowship opportunities with our growing community.
               </div>
             </div>
           </div>
@@ -178,10 +187,10 @@ export default function Footer() {
         
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0 w-full">
             
             {/* Copyright */}
-            <div className="text-gray-500 text-sm">
+            <div className="text-gray-500 text-sm text-center lg:text-left">
               © 2024 House of Prayer Mumbai. All rights reserved.
             </div>
             

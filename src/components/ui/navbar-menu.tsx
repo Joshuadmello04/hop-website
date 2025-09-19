@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
-const transition = {
+import { Transition } from 'framer-motion'
+
+const transition: Transition = {
   type: 'spring',
   mass: 0.5,
   damping: 11.5,
@@ -77,7 +79,11 @@ export const Menu = ({
   )
 }
 
-export const HoveredLink = ({ children, icon, ...rest }: any) => {
+export const HoveredLink = ({
+  children,
+  icon,
+  ...rest
+}: React.ComponentProps<typeof Link> & { icon?: React.ReactNode }) => {
   return (
     <Link
       {...rest}

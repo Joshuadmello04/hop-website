@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react'
 import {
-  HoveredLink,
   Menu,
   MenuItem,
   MenuSection,
   ServiceItem,
-  QuickAction
-} from './ui/navbar-menu'
+  QuickAction,
+  HoveredLink
+} from '@/components/ui/navbar-menu'
 import { cn } from '@/lib/utils'
 import {
   Calendar,
@@ -25,8 +25,8 @@ import {
   Navigation,
   MenuIcon
 } from 'lucide-react'
-import { Button } from './ui/button'
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function ChurchNavbar () {
   return (
@@ -258,10 +258,10 @@ function Navbar ({ className }: { className?: string }) {
                 </div>
 
                 {/* Bottom Buttons */}
-                <div className='pb-6 px-4 border-t border-red-600/30 flex items-center gap-3'>
+                <div className='pb-6 px-4 border-t border-red-600/30 pt-4 space-y-3'>
                   <a
-                    href='https://www.google.com/maps/search/?api=1&query=Rotary%20Club%20Of%20Bombay%20West...'
-                    className='flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/40 hover:bg-red-600/30 transition-colors text-sm font-medium'
+                    href='https://www.google.com/maps/search/?api=1&query=Rotary%20Club%20Of%20Bombay%20West%20Gr.%20Floor%2C%20Rotary%20Club%2C%20Juhu%20Tara%20Rd%2C%20Mangelwadi%2C%20Shivaji%20Nagr%2C%20Santacruz%20(West)%2C%20Mumbai%2C%20Maharashtra%20400054%2C%20India'
+                    className='flex items-center gap-2 px-4 py-2 rounded-full border border-red-500/40 hover:bg-red-600/30 transition-colors text-sm font-medium w-full justify-center'
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <MapPin size={18} />
@@ -269,7 +269,7 @@ function Navbar ({ className }: { className?: string }) {
                   </a>
                   <a
                     href='/live'
-                    className='flex items-center gap-2 px-5 py-2 rounded-full bg-red-600 hover:bg-red-700 transition-colors text-sm font-medium shadow-lg'
+                    className='flex items-center gap-2 px-5 py-2 rounded-full bg-red-600 hover:bg-red-700 transition-colors text-sm font-medium shadow-lg w-full justify-center'
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <Navigation size={18} />
