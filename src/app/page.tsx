@@ -1,5 +1,6 @@
 import UltraModernCalendar from "@/components/calendar";
 import Footer from "@/components/footer";
+import HeroSection from "@/components/herosection";
 import { ChurchNavbar } from "@/components/navbar";
 import SignupFormDemo from "@/components/signup-form-demo";
 import { Spotlight } from "@/components/spotlight";
@@ -17,11 +18,9 @@ export default function Home() {
 
       {/* Page Content */}
       <ChurchNavbar />
+      <HeroSection/>
       <Spotlight />
-      <TimelineDemo/>
-      <UltraModernCalendar/>
       <Testimonials/>
-      <SignupFormDemo />
       <Footer/>
     </div>
   );

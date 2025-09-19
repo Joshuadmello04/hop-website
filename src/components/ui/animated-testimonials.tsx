@@ -44,9 +44,11 @@ export const AnimatedTestimonials = ({
   };
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+      <h2 className="text-amber-100 text-center text-5xl mb-5">WHAT PEOPLE SAY</h2>
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
+            
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -112,7 +114,7 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-black dark:text-white">
+            <h3 className="text-2xl font-bold text-amber-100 dark:text-white">
               {testimonials[active].name}
             </h3>
             <p className="text-sm text-gray-500 dark:text-neutral-500">
