@@ -150,7 +150,7 @@ export const DraggableCardBody = ({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative min-h-28 w-40 sm:min-h-32 sm:w-52 md:min-h-48 md:w-72 lg:min-h-64 lg:w-80 overflow-hidden rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 p-3 sm:p-4 md:p-6 shadow-2xl transform-3d border border-amber-200/50 backdrop-blur-sm dark:from-amber-950/20 dark:to-orange-950/20 dark:bg-neutral-900 dark:border-amber-800/30",
+        "relative min-h-28 w-40 sm:min-h-32 sm:w-52 md:min-h-48 md:w-72 lg:min-h-64 lg:w-80 overflow-hidden rounded-xl bg-gradient-to-br from-amber-50 to-yellow-50 p-3 sm:p-4 md:p-6 shadow-2xl transform-3d border border-amber-200/70 backdrop-blur-sm dark:from-amber-900 dark:to-yellow-900 dark:bg-neutral-800 dark:border-amber-600/50 cursor-grab active:cursor-grabbing",
         className,
       )}
     >
@@ -159,7 +159,7 @@ export const DraggableCardBody = ({
         style={{
           opacity: glareOpacity,
         }}
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-200/30 to-orange-200/30 select-none"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-200/20 to-yellow-200/30 select-none"
       />
     </motion.div>
   )

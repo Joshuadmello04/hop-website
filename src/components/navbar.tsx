@@ -222,9 +222,13 @@ function Navbar ({ className }: { className?: string }) {
                 {/* Mobile Header */}
                 <div className='flex items-center justify-between p-4 border-b border-red-600/30'>
                   <div className='flex items-center space-x-3'>
-                    <div className='w-12 h-12 bg-red-600 rounded-full flex items-center justify-center'>
-                      <div className='w-7 h-7 bg-white rounded-sm'></div>
-                    </div>
+                    <Image
+                      src='/logo/HOP_Logo.png'
+                      alt='House of Prayer Logo'
+                      width={48} // same as w-12
+                      height={48} // same as h-12
+                      className='rounded-full shadow-md object-contain'
+                    />
                     <div>
                       <h2 className='font-bold text-white text-lg'>
                         House of Prayer

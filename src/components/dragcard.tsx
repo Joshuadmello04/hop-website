@@ -47,17 +47,14 @@ export default function DraggableCardDemo() {
   ]
 
   return (
-    <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip bg-gradient-to-br from-amber-900/20 via-orange-900/10 to-red-900/20">
-      {/* Decorative radial gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,191,36,0.1),transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(239,68,68,0.08),transparent_50%)] pointer-events-none" />
+    <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip bg-neutral-900">
 
       {/* Heading */}
       <div className="absolute top-1/2 mx-auto max-w-4xl -translate-y-3/4 text-center px-8">
-        <p className="text-2xl font-bold text-amber-800/60 md:text-4xl lg:text-5xl dark:text-amber-200/40 leading-tight text-balance">
+        <p className="text-2xl font-bold text-white md:text-4xl lg:text-5xl leading-tight text-balance">
           {"A Community of Faith, Hope, and Love"}
         </p>
-        <p className="mt-4 text-lg text-amber-700/50 md:text-xl dark:text-amber-300/30 max-w-2xl mx-auto text-pretty">
+        <p className="mt-4 text-lg text-white/80 md:text-xl max-w-2xl mx-auto text-pretty">
           {"House of Prayer Mumbai - Empowering families through the Word of God, Spirit-led worship, and prayer"}
         </p>
       </div>
@@ -67,7 +64,7 @@ export default function DraggableCardDemo() {
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-amber-400/20 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -84,13 +81,13 @@ export default function DraggableCardDemo() {
           key={index}
           className={`aspect-[3/4] ${item.className}`} // ✅ keeps all cards same aspect ratio
         >
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full pointer-events-none">
             <img
               src={item.image || "/placeholder.svg"}
               alt={item.title}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg pointer-events-none"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center py-2 text-base font-semibold">
+            <div className="absolute bottom-0 left-0 right-0 bg-red-600/90 text-white text-center py-2 text-base font-semibold pointer-events-none">
               {item.title}
             </div>
           </div>
