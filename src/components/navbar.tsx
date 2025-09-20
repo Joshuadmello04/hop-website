@@ -27,6 +27,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import Image from 'next/image'
 
 export function ChurchNavbar () {
   return (
@@ -54,9 +55,13 @@ function Navbar ({ className }: { className?: string }) {
       >
         {/* Logo Section */}
         <div className='flex items-center space-x-3'>
-          <div className='w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg'>
-            <div className='w-8 h-8 bg-white rounded-sm'></div>
-          </div>
+          <Image
+            src='/logo/HOP_Logo.png'
+            alt='House of Prayer Logo'
+            width={48} // same as w-12
+            height={48} // same as h-12
+            className='rounded-full shadow-lg'
+          />
           <div className='hidden sm:block'>
             <h1 className='text-white font-bold text-lg'>House of Prayer</h1>
             <p className='text-white/70 text-xs'>Mumbai</p>

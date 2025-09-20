@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Almarai, Noto_Serif_Display } from "next/font/google"; // 👈 import fonts
 import "./globals.css";
 
 const geistSans = Geist({
@@ -10,6 +11,19 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const almarai = Almarai({
+  weight: "400", // 👈 regular
+  variable: "--font-almarai",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const notoSerifDisplay = Noto_Serif_Display({
+  subsets: ["latin"],
+  variable: "--font-noto-serif-display",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +39,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${almarai.variable} 
+          ${notoSerifDisplay.variable}
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          antialiased
+        `}
       >
         {children}
       </body>
